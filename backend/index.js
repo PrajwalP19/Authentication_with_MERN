@@ -14,12 +14,14 @@ const app = express()
 
 const PORT = process.env.PORT || 5000
 
+//global middlewares
 
-app.get("/", (req, res) => {
-    res.send("Hello there!!")
-})
+app.use(express.json())   // allows us to parse incoming requests : req.body
+
+
 
 app.use("/api/v1/auth", authRoute)
+
 
 
 app.listen(PORT, () => {
