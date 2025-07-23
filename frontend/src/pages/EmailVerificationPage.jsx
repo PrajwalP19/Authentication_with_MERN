@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-// import { useAuthStore } from "../store/authStore";
+import { useAuthStore } from "../store/authStore";
 import toast from "react-hot-toast";
 
 
@@ -10,10 +10,7 @@ const EmailVerificationPage = () => {
 	const inputRefs = useRef([]);
 	const navigate = useNavigate();
 
-	// const { error, isLoading, verifyEmail } = useAuthStore();
-    const error = false
-    const verifyEmail = false
-    const isLoading = false
+	const { error, isLoading, verifyEmail } = useAuthStore();
 
 	const handleChange = (index, value) => {
 		const newCode = [...code];

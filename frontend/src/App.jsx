@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage'
 import SignUpPage from './pages/SignUpPage'
 import LoginPage from './pages/LoginPage'
 import EmailVerificationPage from './pages/EmailVerificationPage'
+import { Toaster } from 'react-hot-toast'
 
 
 
@@ -26,6 +27,7 @@ const App = () => {
         <Route  path='/verify-email' element={<EmailVerificationPage />}/>
       </Routes>
 
+    <Toaster />
    </div>
    </>
   )

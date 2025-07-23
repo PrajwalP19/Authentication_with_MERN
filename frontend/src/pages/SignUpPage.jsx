@@ -4,7 +4,8 @@ import { Loader, Lock, Mail, User } from "lucide-react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import PasswordStrengthMeter from "../components/PasswordStrengthMeter";
-// import { useAuthStore } from "../store/authStore";
+import { useAuthStore } from "../store/authStore";
+
 
 
 const SignUpPage = () => {
@@ -13,11 +14,7 @@ const SignUpPage = () => {
 	const [password, setPassword] = useState("");
 	const navigate = useNavigate();
 
-	// const { signup, error, isLoading } = useAuthStore();
-  const signup = true
-  const error = false;
-  const isLoading = false
-  
+	const { signup, error, isLoading } = useAuthStore()
 
 	const handleSignUp = async (e) => { 
 		e.preventDefault();
@@ -29,6 +26,8 @@ const SignUpPage = () => {
 			console.log(error);
 		}
 	};
+
+	
 	return (
 		<motion.div
 			initial={{ opacity: 0, y: 20 }}
