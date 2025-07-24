@@ -24,6 +24,7 @@ const LoginPage = () => {
 			className='max-w-md w-full bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-xl rounded-2xl shadow-xl overflow-hidden'
 		>
 			<div className='p-8'>
+				
 				<h2 className='text-3xl font-bold mb-6 text-center bg-gradient-to-r from-green-400 to-emerald-500 text-transparent bg-clip-text'>
 					Welcome Back
 				</h2>
@@ -50,6 +51,7 @@ const LoginPage = () => {
 							Forgot password?
 						</Link>
 					</div>
+
 					{error && <p className='text-red-500 font-semibold mb-2'>{error}</p>}
 
 					<motion.button
@@ -59,10 +61,14 @@ const LoginPage = () => {
 						type='submit'
 						disabled={isLoading}
 					>
+
 						{isLoading ? <Loader className='w-6 h-6 animate-spin  mx-auto' /> : "Login"}
+
 					</motion.button>
 				</form>
+
 			</div>
+
 			<div className='px-8 py-4 bg-gray-900 bg-opacity-50 flex justify-center'>
 				<p className='text-sm text-gray-400'>
 					Don't have an account?{" "}
@@ -71,6 +77,7 @@ const LoginPage = () => {
 					</Link>
 				</p>
 			</div>
+
 		</motion.div>
 	);
 };
