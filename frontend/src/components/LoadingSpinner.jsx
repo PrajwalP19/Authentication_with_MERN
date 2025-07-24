@@ -1,14 +1,16 @@
-const Input = ({ icon: Icon, ...props }) => {
+import { motion } from "framer-motion";
+
+const LoadingSpinner = () => {
 	return (
-		<div className='relative mb-6'>
-			<div className='absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none'>
-				<Icon className='size-5 text-green-500' />
-			</div>
-			<input
-				{...props}
-				className='w-full pl-10 pr-3 py-2 bg-gray-800 bg-opacity-50 rounded-lg border border-gray-700 focus:border-green-500 focus:ring-2 focus:ring-green-500 text-white placeholder-gray-400 transition duration-200'
+		<div className='min-h-screen bg-gradient-to-br from-gray-900 via-green-900 to-emerald-900 flex items-center justify-center relative overflow-hidden'>
+			{/* Simple Loading Spinner */}
+			<motion.div
+				className='w-16 h-16 border-4 border-t-4 border-t-green-500 border-green-200 rounded-full'
+				animate={{ rotate: 360 }}
+				transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
 			/>
 		</div>
 	);
 };
-export default Input;
+
+export default LoadingSpinner;
