@@ -176,6 +176,7 @@ export const resetPassword = async (req, res) => {
 		user.password = hashedPassword;
 		user.resetPasswordToken = undefined;
 		user.resetPasswordExpiresAt = undefined;
+
 		await user.save();
 
 		await sendResetSuccessEmail(user.email);
@@ -191,6 +192,7 @@ export const resetPassword = async (req, res) => {
 export const checkAuth = async (req, res) => {
 	try {
 		const user = await User.findById(req.userId).select("-password");
+		
 		if (!user) {
 			return res.status(400).json({ success: false, message: "User not found" });
 		}
